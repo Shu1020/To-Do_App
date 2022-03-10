@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration</title>
+<Link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1> Create your To-Do List</h1>
+		</div>
+		
+	<form th:action="@{process_todo}" method="POST"
+	style="max-width: 600px; margin: 0 auto;"
+	th:object="${course}"
+	>
+	
+	<!-- <div class="m-3">
+		<div class="form-group row">
+			<label class="col-form-label col-4">Your E-mail</label>
+			<div class="col-8">
+				<input type="text" class="form-control" th:field="*{email}" required/>
+			</div>
+		</div>
+	</div> -->
+	
+	
+	<div class="m-3">
+		<div class="form-group row">
+				<label class="col-form-label col-4">Title</label>
+				<div class="col-8">
+					<input type="text" class="form-control" th:field="*{task}" required minlength="2"/>
+				</div>
+		</div>
+	</div>
+	
+	<div class="m-3">
+		<div class="form-group row">
+			<label class="col-form-label col-4">Description</label>
+			<div class="col-8">
+				<input type="text" class="form-control" th:field="*{description}" required/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="m-3">
+		<div class="form-group row">
+			<label class="col-form-label col-4">status</label>
+			<div class="col-8">
+				<input type="text" class="form-control" th:field="*{status}" required />
+			</div>
+		</div>
+	</div>
+	
+	
+		<div>
+			<button type="submit" class="btn btn-primary">CREATE!</button>
+		</div>
+	</form>
+	</div>
+	
+</body>
+</html>
